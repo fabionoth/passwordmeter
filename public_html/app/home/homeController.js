@@ -17,8 +17,7 @@ app.controller('HomeController', function ($scope) {
     //Additions
     function numberOfCharacters() {
         $scope.n = ($scope.pwvalidate.length * 4);
-    }
-    ;
+    };
 
     function upperCaseLetters() {
         $scope.n = (($scope.pwvalidate.length - countUpperCaseChars($scope.pwvalidate)) * 2);
