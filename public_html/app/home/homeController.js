@@ -160,7 +160,8 @@ app.controller('HomeController', function ($scope) {
                 sum++;
             }
         }
-        console.log("sequencialNumbers() = " + sum);
+        $scope.n += (sum * 3) * -1;
+        console.log("sequencialNumbers()= " + $scope.n);
     }
     ;
     function sequencialLetters() {
@@ -174,7 +175,8 @@ app.controller('HomeController', function ($scope) {
                 }
             }
         }
-        console.log("sequencialLetters() = " + sum);
+        $scope.n += (sum * 3) * -1;
+        console.log("sequencialLetters()= " + $scope.n);
     }
     ;
 
