@@ -23,7 +23,7 @@ and open the template in the editor.
                                  <input class="form-control maxsize" type="password" ng-change="updateValidation()" ng-model="pwvalidate" id="exampleInputEmail1" placeholder="Senha" >
                             </div>
                             <span class="label label-default">{{ n }} %</span>
-                            <span class="label label-danger">Muito Curta</span>
+                            <span class="{{labelclass}}">{{labeltext}}</span>
                         </div>
                     </div>
                 </div>

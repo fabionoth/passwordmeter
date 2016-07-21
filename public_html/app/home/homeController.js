@@ -4,12 +4,12 @@ var app = angular.module('app', []);
 
 app.controller('HomeController', function ($scope) {
 
-    $scope.n = 0;
     $scope.pwvalidate = "";
+    initData();
 
     $scope.updateValidation = function () {
         console.clear();
-        $scope.n = 0;
+        initData();
         //Additions
         numberOfCharacters();
         upperCaseLetters();
@@ -27,7 +27,15 @@ app.controller('HomeController', function ($scope) {
         consecutiveNumber();
         sequencialNumbers();
         sequencialLetters();
+        review();
     };
+
+    function initData() {
+        $scope.n = 0;
+        $scope.labelclass = 'label label-danger';
+        $scope.labeltext = 'Muito curta';
+    }
+    ;
 
     //Additions
     function numberOfCharacters() {
@@ -177,6 +185,35 @@ app.controller('HomeController', function ($scope) {
         }
         $scope.n += (sum * 3) * -1;
         console.log("sequencialLetters()= " + $scope.n);
+    }
+    ;
+
+    function review() {
+        var n = $scope.n;
+        n = (n < 0 ? 0 : (n > 100 ? 100 : n));
+        switch (true) {
+            case (n >= 0 && n < 25):
+                $scope.labelclass = 'label label-danger';
+                $scope.labeltext = 'Muito curta';
+                break;
+            case (n >= 25 && n < 50):
+                $scope.labelclass = 'label label-warning';
+                $scope.labeltext = 'Fraco';
+                break;
+            case (n >= 50 && n < 75):
+                $scope.labelclass = 'label label-success';
+                $scope.labeltext = 'Forte';
+                break;
+            case (n >= 75):
+                $scope.labelclass = 'label label-primary';
+                $scope.labeltext = 'Muito forte';
+                break;
+            default :
+                $scope.labelclass = 'label label-danger';
+                $scope.labeltext = 'Muito curta';
+                break;
+        }
+        $scope.n = n;
     }
     ;
 
