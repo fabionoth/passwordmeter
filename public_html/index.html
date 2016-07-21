@@ -10,16 +10,17 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="style/main.css">
     </head>
     <body ng-controller="HomeController">
         <div class="container">
             <div class="row">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><strong>AVALIADOR DE SEGURANÇA DE SENHA </strong></div>
-                    <div class="panel-body">
-                        <div class="col-md-4">
+                    <div class="panel-heading background"><strong class="silver">AVALIADOR DE SEGURANÇA DE SENHA </strong></div>
+                    <div class="panel-body background">
+                        <div class="col-md-12 background-body">
                              <div class="form-group">
-                                 <input type="password" ng-change="updateValidation()" ng-model="pwvalidate" class="form-control" id="exampleInputEmail1" placeholder="Senha">
+                                 <input class="form-control maxsize" type="password" ng-change="updateValidation()" ng-model="pwvalidate" id="exampleInputEmail1" placeholder="Senha" >
                             </div>
                             <span class="label label-default">{{ n }} %</span>
                             <span class="label label-danger">Muito Curta</span>
